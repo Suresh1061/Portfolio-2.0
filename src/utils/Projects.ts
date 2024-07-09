@@ -1,7 +1,7 @@
 export const ProjectsList= [
     {
         id: 1,
-        imgSrc: "/images/Project/videotube.png",
+        imgSrc: "/Images/Project/videotube.png",
         title:"VideoTube",
         description: "Developed a fully responsive youtube based full stack web application using MERN",
         tags: [
@@ -37,7 +37,7 @@ export const ProjectsList= [
     },
     {
         id: 2,
-        imgSrc: "/images/Project/blog.png",
+        imgSrc: "/Images/Project/blog.png",
         title:"Blog Application",
         description: "Developed a real time blog application using React and Appwrite",
         tags: [
@@ -69,7 +69,7 @@ export const ProjectsList= [
     },
     {
         id: 3,
-        imgSrc: "/images/Project/pokedex.png",
+        imgSrc: "/Images/Project/pokedex.png",
         title:"PokeDex App",
         description: "Created and deployed fully responsive pokemon details website using React and Tailwind and Pokemon Api",
         tags: [
