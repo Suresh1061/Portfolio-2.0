@@ -8,7 +8,7 @@ import { FaGlobeAmericas } from 'react-icons/fa'
 import { ProjectsListType } from '../../types'
 
 const ProjectCard: React.FC<ProjectsListType> = ({
-    key,
+    id,
     imgSrc,
     title,
     description,
@@ -18,10 +18,10 @@ const ProjectCard: React.FC<ProjectsListType> = ({
 }) => {
     return (
         <motion.div
-            key={key}
+            key={id}
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.5, type: 'spring', delay: key * 0.3 }}
+            transition={{ duration: 1.5, type: 'spring', delay: id * 0.3 }}
             viewport={{ once: true }}
             className=' max-w-sm  green-pink-gradient p-[2px] rounded-xl '
         >

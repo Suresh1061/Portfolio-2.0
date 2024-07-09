@@ -18,7 +18,7 @@ interface tag {
     color: string
 }
 declare interface ProjectsListType {
-    key: number,
+    id: number,
     imgSrc: string,
     title: string,
     description: string,

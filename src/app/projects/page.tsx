@@ -35,9 +35,10 @@ const ProjectDetails: React.FC = () => {
       </nav>
       <div className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 justify-items-center'>
         {option === 'all' ?
-          ProjectsList.map(item => (
+          ProjectsList.map((item, i) => (
             <ProjectCard
-              key={item.id}
+              key={i + 1}
+              id={i + 1}
               imgSrc={item.imgSrc}
               title={item.title}
               description={item.description}
@@ -46,9 +47,10 @@ const ProjectDetails: React.FC = () => {
               demoLink={item.demoLink}
             />
           )) :
-          ProjectsList.filter(item => item.category === option).map(item => (
+          ProjectsList.filter(item => item.category === option).map((item, i) => (
             <ProjectCard
-              key={item.id}
+              key={i + 1}
+              id={i + 1}
               imgSrc={item.imgSrc}
               title={item.title}
               description={item.description}

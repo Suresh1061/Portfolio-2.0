@@ -11,9 +11,10 @@ const Projects: React.FC = () => {
             >
                 <div className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 justify-items-center'>
                     {
-                        ProjectsList.filter(item => item.isBest === true).map(item => (
+                        ProjectsList.filter(item => item.isBest === true).map((item, i) => (
                             <ProjectCard
-                                key={item.id}
+                                key={i+1}
+                                id={i+1}
                                 imgSrc={item.imgSrc}
                                 title={item.title}
                                 description={item.description}
