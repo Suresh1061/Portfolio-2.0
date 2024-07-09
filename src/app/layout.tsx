@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import StarsCanvas from '@/components/StarCanvas'
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { Toaster } from "react-hot-toast";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +20,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className=' bg-[#0d0d0d] text-white'>
+        <StarsCanvas />
+        <Navbar/>
+        {children}
+        <Toaster/>
+        <Footer/>
+      </body>
     </html>
   );
 }
