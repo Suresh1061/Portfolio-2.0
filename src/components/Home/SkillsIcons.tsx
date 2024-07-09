@@ -1,5 +1,4 @@
 'use client'
-import React from 'react'
 import { motion } from "framer-motion"
 import Subheading from '../Subheading'
 import { SkillsList } from '@/utils/Skills'

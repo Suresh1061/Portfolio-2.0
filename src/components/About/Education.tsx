@@ -10,7 +10,7 @@ import Container from "../Container";
 import Subheading from "../Subheading";
 
 
-const Education = ({ id, date, name, description }: EducationType) => {
+const Education: React.FC = () => {
     return (
         <Container>
             <Subheading heading="Education Details" className=" text-center mb-10"/>

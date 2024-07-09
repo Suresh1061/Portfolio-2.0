@@ -2,7 +2,7 @@ import React from "react";
 import Container from "../Container";
 import SkillsIcons from "./SkillsIcons";
 
-const Skills = () => {
+const Skills: React.FC = () => {
     return (
         <div>
             <Container title="Tech Stacks">

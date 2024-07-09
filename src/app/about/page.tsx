@@ -1,21 +1,16 @@
 'use client'
-import AboutMe from '@/components/About/AboutMe'
+import MyInfo from '@/components/About/MYInfo'
 import Education from '@/components/About/Education'
 import Container from '@/components/Container'
-import { EducationDetails } from '@/utils/Education'
 import React from 'react'
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
 
-const page = () => {
+const AboutMe: React.FC = () => {
   return (
     <Container>
-      <AboutMe />
-      <Education/>
+      <MyInfo />
+      <Education />
     </Container>
   )
 }
 
-export default page
+export default AboutMe

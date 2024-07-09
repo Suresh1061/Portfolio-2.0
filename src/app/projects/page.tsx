@@ -4,7 +4,7 @@ import Container from '@/components/Container'
 import { ProjectsList } from '@/utils/Projects'
 import ProjectCard from '@/components/ProjectCard'
 
-const page = () => {
+const ProjectDetails: React.FC = () => {
   const [option, setOption] = useState("all")
   const optionItem = [
     {
@@ -37,7 +37,7 @@ const page = () => {
         {option === 'all' ?
           ProjectsList.map(item => (
             <ProjectCard
-              id={item.id}
+              key={item.id}
               imgSrc={item.imgSrc}
               title={item.title}
               description={item.description}
@@ -48,7 +48,7 @@ const page = () => {
           )) :
           ProjectsList.filter(item => item.category === option).map(item => (
             <ProjectCard
-              id={item.id}
+              key={item.id}
               imgSrc={item.imgSrc}
               title={item.title}
               description={item.description}
@@ -62,4 +62,4 @@ const page = () => {
   )
 }
 
-export default page
+export default ProjectDetails

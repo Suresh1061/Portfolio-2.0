@@ -1,3 +1,7 @@
+import { SocialMediaIcons } from './src/utils/SocialIconsList';
+
+declare module 'maath/random/dist/maath-random.esm.js'
+
 declare interface NavItemsType {
     name: string,
     path: string,
@@ -14,7 +18,7 @@ interface tag {
     color: string
 }
 declare interface ProjectsListType {
-    id: number,
+    key: number,
     imgSrc: string,
     title: string,
     description: string,
@@ -35,4 +39,11 @@ declare interface sendMessageTypes {
     name: string,
     email: string,
     message: string
+}
+
+declare interface SocialMediaIconsType{
+    name: string,
+    href: string,
+    icon: React.ReactElement,
+    hoverColor?: string
 }

@@ -1,16 +1,12 @@
-"use client"
-import { useState, useRef, Suspense, FC } from "react";
+'use client'
+import { useState, useRef, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial, Preload } from "@react-three/drei";
-import * as random from "maath/random/dist/maath-random.esm.js";
+import * as random from "maath/random/dist/maath-random.esm";
 
-interface StarsProps {
-    // Add any props here if needed
-}
-
-const Stars: FC<StarsProps> = (props) => {
-    const ref = useRef<THREE.Group>(null);
-    const [sphere] = useState(() =>
+const Stars: React.FC<any> = (props) => {
+    const ref = useRef<any>();
+    const [sphere] = useState<Float32Array>(() =>
         random.inSphere(new Float32Array(8000), { radius: 1.2 })
     );
 
@@ -36,13 +32,14 @@ const Stars: FC<StarsProps> = (props) => {
     );
 };
 
-const StarsCanvas: FC = () => {
+const StarsCanvas: React.FC = () => {
     return (
         <div className="w-full h-[100%] fixed top-0 z-[-1]">
             <Canvas camera={{ position: [0, 0, 1] }}>
                 <Suspense fallback={null}>
                     <Stars />
                 </Suspense>
+
                 <Preload all />
             </Canvas>
         </div>

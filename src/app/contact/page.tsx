@@ -8,7 +8,7 @@ import { FaLocationDot, FaWhatsapp, FaTelegram } from "react-icons/fa6"
 import ContactForm from '@/components/ContactForm'
 import { Animation } from '@/utils/Motion'
 
-const Page: React.FC = () => {
+const ContactUs: React.FC = () => {
 
   return (
     <div>
@@ -18,7 +18,7 @@ const Page: React.FC = () => {
           <motion.div  {...Animation.slideFromLeft} >
             <p className='opacity-70 font-Lora text-sm md:text-base tracking-wider'>
               I am available for any freelance or internship or full-time positions<br />
-              Connect me and let's talk
+              Connect me and let&apos;s talk
             </p>
           </motion.div>
         </div>
@@ -58,4 +58,4 @@ const Page: React.FC = () => {
   )
 }
 
-export default Page
+export default ContactUs

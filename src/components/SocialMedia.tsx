@@ -1,4 +1,4 @@
-import React from 'react'
+'use client'
 import {
     FaFacebookF,
     FaInstagram,
@@ -7,7 +7,7 @@ import {
 } from "react-icons/fa6";
 import { motion } from "framer-motion";
 
-const SocialMedia = ({ className }: { className?: string }) => {
+const SocialMedia = ({ className }: { className?: string }):JSX.Element => {
     return (
         <div className={`flex gap-x-4 mr-2 ${className}`}>
             <div className='h-9 w-9 green-pink-gradient rounded-full p-[1px] flex justify-center items-center'>

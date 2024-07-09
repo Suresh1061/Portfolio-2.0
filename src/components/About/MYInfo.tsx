@@ -1,16 +1,15 @@
-import React from 'react'
-import Container from '../Container'
+'use client'
 import { Animation } from '@/utils/Motion'
 import Image from 'next/image'
 import {motion} from "framer-motion"
 
-const AboutMe = () => {
+const MyInfo: React.FC = () => {
     return (
         <div className=' grid grid-cols-1 lg:grid-cols-3  gap-10'>
             <motion.div {...Animation.slideFromLeft} className='max-w-3xl max-lg:mx-auto h-full space-y-3 lg:col-span-2 order-2 lg:order-1'>
                 <div>
                     <p className="text-sm md:text-lg font-[500]  font-Lora text-yellow-600">
-                        Hello, I'm 👋
+                        Hello, I&apos;m 👋
                     </p>
                     <h1
                         className={` text-5xl xl:text-6xl font-serif font-semibold text-[#915eff] violet-text-gradient`}
@@ -56,4 +55,4 @@ const AboutMe = () => {
     )
 }
 
-export default AboutMe
+export default MyInfo

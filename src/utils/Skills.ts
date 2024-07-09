@@ -1,3 +1,5 @@
+import { SkillsListType } from "../../types";
+
 export const SkillsList: SkillsListType[] = [
     {
         name: "HTML 5",

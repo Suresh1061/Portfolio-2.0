@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import React from 'react'
 import { FaArrowUpLong } from "react-icons/fa6";
 
-const ScrollToTopBtn = () => {
+const ScrollToTopBtn: React.FC = () => {
     const scrollToTop = () => {
         window.scroll(0, 0);
     }

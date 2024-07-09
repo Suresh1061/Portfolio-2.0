@@ -1,17 +1,18 @@
+'use client'
 import Image from "next/image";
 import { motion } from 'framer-motion'
 import { Typewriter } from "react-simple-typewriter";
 import { Animation } from "@/utils/Motion";
 import Container from "../Container";
 
-const HomePage = () => {
+const HomePage: React.FC = () => {
     return (
         <Container>
             <div className=" h-full flex max-md:flex-col  md:justify-between items-start gap-12 md:gap-20 lg:pt-8 max-md:pb-10">
                 <div className=" w-full max-w-3xl order-2 md:order-1 flex flex-col  space-y-3">
                     <div>
                         <p className="text-sm lg:text-base font-[500]  font-Lora text-yellow-600">
-                            Hello, I'm 👋
+                            Hello, I&apos;m 👋
                         </p>
                         <h1
                             className={` text-5xl lg:text-7xl  font-serif font-semibold text-[#915eff] violet-text-gradient`}
@@ -34,8 +35,8 @@ const HomePage = () => {
                     </div>
                     <p className="text-sm sm:text-lg font-Lora tracking-wider opacity-75 text-justify">
                         I create websites and applications that not only look fantastic but also function seamlessly.
-                        Whether it's developing innovative apps or diving into the latest web technologies, I'm all in.
-                        Let's connect and turn your ideas into digital reality!
+                        Whether it&apos;s developing innovative apps or diving into the latest web technologies, I&apos;m all in.
+                        Let&apos;s connect and turn your ideas into digital reality!
                     </p>
                     <div>
                         <div className=" w-full flex justify-center md:justify-start items-center gap-8 mt-5">

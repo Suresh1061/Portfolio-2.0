@@ -19,7 +19,7 @@ const Navbar = (): JSX.Element => {
             >
                 <div className=" max-w-screen-xl w-full mx-auto h-full px-4 flex items-center justify-between">
                     <div className=' flex items-center gap-x-2'>
-                        <img src="https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width='30px' />
+                        <Image src="https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width={30} height={30} alt='logo_icon' />
                         <Link
                             href="/"
                             className=" text-[#0fbff5] text-[28px] md:text-3xl font-Dancing cursor-pointer tracking-wider "
@@ -92,7 +92,7 @@ const Navbar = (): JSX.Element => {
                     </ul>
                     <div >
                         <p className=" text-lg font-Lora tracking-wider font-medium opacity-90 text-center mb-5">
-                            Let's connect
+                            Let&apos;s connect
                         </p>
                         <SocialMedia />
                     </div>

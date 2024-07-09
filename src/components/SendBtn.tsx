@@ -1,7 +1,7 @@
 'use client'
 import { motion } from 'framer-motion'
 
-const SendBtn = ({ loading, onclick }: { loading?: boolean, onclick?: Event }) => {
+const SendBtn = ({ loading, onclick }: { loading?: boolean, onclick?: Event }): JSX.Element => {
     return (
         <div>
             {!loading ? (
@@ -22,7 +22,7 @@ const SendBtn = ({ loading, onclick }: { loading?: boolean, onclick?: Event }) =
                 </button>
             ) : (
                 <button
-                        type='submit' className=" w-[110px] h-11 rounded-lg bg-gradient-to-r from-[#8e2de2] to-[#4a00e0] flex gap-x-1.5 justify-center items-center">
+                    type='submit' className=" w-[110px] h-11 rounded-lg bg-gradient-to-r from-[#8e2de2] to-[#4a00e0] flex gap-x-1.5 justify-center items-center">
                     <motion.div
                         animate={{ y: [-3, 0, 3, 0, -3] }}
                         transition={{ duration: 1.5, easings: ['easeIn', 'easeOut'], repeat: Infinity }}

@@ -3,7 +3,7 @@ import Link from 'next/link'
 import ProjectCard from '../ProjectCard'
 import { ProjectsList } from '@/utils/Projects'
 
-const Projects = () => {
+const Projects: React.FC = () => {
     return (
         <div>
             <Container
@@ -13,7 +13,7 @@ const Projects = () => {
                     {
                         ProjectsList.filter(item => item.isBest === true).map(item => (
                             <ProjectCard
-                                id={item.id}
+                                key={item.id}
                                 imgSrc={item.imgSrc}
                                 title={item.title}
                                 description={item.description}
