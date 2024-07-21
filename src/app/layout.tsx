@@ -5,6 +5,7 @@ import StarsCanvas from '@/components/StarCanvas'
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Toaster } from "react-hot-toast";
+import { Analytics } from "@vercel/analytics/react"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,7 +26,8 @@ export default function RootLayout({
         <Navbar/>
         {children}
         <Toaster/>
-        <Footer/>
+        <Footer />
+        <Analytics/>
       </body>
     </html>
   );
