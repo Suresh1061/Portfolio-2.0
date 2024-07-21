@@ -44,7 +44,7 @@ const MyInfo: React.FC = () => {
             <motion.div {...Animation.slideFromRight} className='max-w-xs  mx-auto h-full relative flex justify-center items-start order-1 lg:order-2'>
                 <div className=' w-full bg-shape overflow-hidden lg:mt-6'>
                     <Image
-                        src={"/Images/myphoto.png"}
+                        src={"/Images/myphoto.webp"}
                         alt='my photo'
                         width={400}
                         height={400}
