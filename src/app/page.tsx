@@ -22,7 +22,7 @@ const Page = async () => {
       <HomePage info={info} />
       {skills.length > 0 && <Skills skills={skills} />}
       {(projects.length > 0 && projects.filter(project => project.best === true).length > 0) &&
-        <Projects projects={projects} />}
+        <Projects projects={projects.reverse()} />}
     </div>
   )
 }

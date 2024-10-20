@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useCallback, useMemo, useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import Subheading from '../Subheading'
 import Image from 'next/image'
 import fileService from "@/appwrite/file"
