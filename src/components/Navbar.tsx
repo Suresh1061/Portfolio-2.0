@@ -1,4 +1,5 @@
 'use client'
+
 import { useState } from 'react';
 import Link from 'next/link';
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
@@ -7,8 +8,11 @@ import SocialMedia from './SocialMedia';
 import { usePathname } from 'next/navigation';
 import { NavItems } from '@/utils/NavItems';
 
+type Props = {
+    info: infoProps;
+}
 
-const Navbar = (): JSX.Element => {
+const Navbar = ({ info }: Props) => {
     const [toggle, setToggle] = useState(false);
     const pathname = usePathname();
 
@@ -19,7 +23,13 @@ const Navbar = (): JSX.Element => {
             >
                 <div className=" max-w-screen-xl w-full mx-auto h-full px-4 flex items-center justify-between">
                     <div className=' flex items-center gap-x-2'>
-                        <Image src="https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width={30} height={30} alt='logo_icon' />
+                        <Image
+                            src="https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif"
+                            width={30}
+                            height={30}
+                            alt='logo_icon'
+                            unoptimized
+                        />
                         <Link
                             href="/"
                             className=" text-[#0fbff5] text-[28px] md:text-3xl font-Dancing cursor-pointer tracking-wider "
@@ -44,7 +54,7 @@ const Navbar = (): JSX.Element => {
                                 );
                             })}
                         </ul>
-                        <Link href="https://github.com/Suresh1061" target="_blank">
+                        <Link href={info?.github} target="_blank">
                             <Image
                                 src={'/Images/github.png'}
                                 alt="github"
@@ -94,7 +104,7 @@ const Navbar = (): JSX.Element => {
                         <p className=" text-lg font-Lora tracking-wider font-medium opacity-90 text-center mb-5">
                             Let&apos;s connect
                         </p>
-                        <SocialMedia />
+                        <SocialMedia info={info} />
                     </div>
                 </div>
             )}

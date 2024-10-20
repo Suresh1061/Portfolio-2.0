@@ -1,26 +1,19 @@
 import Container from '../Container'
 import Link from 'next/link'
-import ProjectCard from '../ProjectCard'
-import { ProjectsList } from '@/utils/Projects'
+import dynamic from 'next/dynamic'
+const ProjectCard = dynamic(() => import('@/components/ProjectCard'), { ssr: false })
 
-const Projects: React.FC = () => {
+const Projects:React.FC<{ projects: projectProps[] }> = ({ projects })  => {
     return (
         <div>
-            <Container
-                title='Projects'
-            >
+            <Container title='Projects'>
                 <div className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 justify-items-center'>
                     {
-                        ProjectsList.filter(item => item.isBest === true).map((item, i) => (
+                        projects.filter(project => project.best === true).map((project, index) => (
                             <ProjectCard
-                                key={i+1}
-                                id={i+1}
-                                imgSrc={item.imgSrc}
-                                title={item.title}
-                                description={item.description}
-                                tags={item.tags}
-                                githubLink={item.githubLink}
-                                demoLink={item.demoLink}
+                                key={project.$id}
+                                index={index + 1}
+                                project={project}
                             />
                         ))
                     }

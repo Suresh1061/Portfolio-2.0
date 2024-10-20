@@ -1,67 +1,21 @@
-'use client'
-import React, { useState } from 'react'
-import Container from '@/components/Container'
-import { ProjectsList } from '@/utils/Projects'
-import ProjectCard from '@/components/ProjectCard'
+import Container from "@/components/Container"
+import { getProjects } from "@/libs/action"
+import dynamic from "next/dynamic"
+import { memo } from "react"
+const ProjectDetails = memo(dynamic(() => import('@/components/Projects/ProjectDetails'), { ssr: false }))
 
-const ProjectDetails: React.FC = () => {
-  const [option, setOption] = useState("all")
-  const optionItem = [
-    {
-      name: "All Projects",
-      slug: "all"
-    },
-    {
-      name: "Full Stack",
-      slug: "fullStack"
-    },
-    {
-      name: "Frontend",
-      slug: "frontend"
-    },
-  ]
+const Page = async () => {
+  const data: any = await getProjects()
+  const projects: projectProps[] = data?.documents || [];
+
   return (
     <Container>
-      <nav className=' w-full flex justify-center items-center gap-5 sm:gap-x-10 text-sm sm:text-lg font-Lora tracking-wider mb-12'>
-        {optionItem.map((item) => (
-          <button
-            key={item.slug}
-            onClick={() => setOption(item.slug)}
-            className={`${option === item.slug ? "text-white" : "text-secondary"} hover:text-white`}
-          >
-            {item.name}
-          </button>
-        ))}
-      </nav>
-      <div className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 justify-items-center'>
-        {option === 'all' ?
-          ProjectsList.map((item, i) => (
-            <ProjectCard
-              key={i + 1}
-              id={i + 1}
-              imgSrc={item.imgSrc}
-              title={item.title}
-              description={item.description}
-              tags={item.tags}
-              githubLink={item.githubLink}
-              demoLink={item.demoLink}
-            />
-          )) :
-          ProjectsList.filter(item => item.category === option).map((item, i) => (
-            <ProjectCard
-              key={i + 1}
-              id={i + 1}
-              imgSrc={item.imgSrc}
-              title={item.title}
-              description={item.description}
-              tags={item.tags}
-              githubLink={item.githubLink}
-              demoLink={item.demoLink}
-            />
-          ))}
-      </div>
+      {projects.length !== 0
+        ? <ProjectDetails projects={projects.reverse()} />
+        : <p className="text-xl text-center font-Lora text-secondary">No Projects Found</p>
+      }
     </Container>
   )
 }
 
-export default ProjectDetails
+export default Page

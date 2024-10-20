@@ -1,7 +1,6 @@
 import { IoMdContact, IoMdHome } from "react-icons/io";
 import { IoSettingsSharp } from "react-icons/io5";
 import { MdContactSupport } from "react-icons/md";
-import { NavItemsType } from "../../types";
 
 
 export const NavItems: NavItemsType[] = [

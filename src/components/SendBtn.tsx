@@ -1,7 +1,7 @@
 'use client'
 import { motion } from 'framer-motion'
 
-const SendBtn = ({ loading, onclick }: { loading?: boolean, onclick?: Event }): JSX.Element => {
+const SendBtn: React.FC<{loading?:boolean}> = ({ loading }) => {
     return (
         <div>
             {!loading ? (

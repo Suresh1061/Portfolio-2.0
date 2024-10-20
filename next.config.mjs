@@ -5,10 +5,15 @@ const nextConfig = {
         remotePatterns: [
             {
                 protocol: 'https',
-                hostname: 'media2.giphy.com'
+                hostname: 'cloud.appwrite.io',
+            },
+            {
+                protocol: 'https',
+                hostname: 'media2.giphy.com',
             }
         ]
     }
 };
 
 export default nextConfig;
+
