@@ -1,13 +1,12 @@
 'use client'
 
-import { motion } from "framer-motion"
+import { delay, motion } from "framer-motion"
 import React from "react";
 import { Animation } from "./Motion";
 
 type Props = {
     children: React.ReactNode;
     className?: string;
-    index?: number;
 }
 
 export const PopUp: React.FC<Props> = ({ children, className }) => {
@@ -55,7 +54,13 @@ export const SlideFromRight: React.FC<Props> = ({ children, className }) => {
     )
 }
 
-export const VisiableSlowly: React.FC<Props> = ({ children, className, index = 1 }) => {
+type springLikeAnimationProps = {
+    children: React.ReactNode;
+    index: number
+    className?: string;
+}
+
+export const VisiableSlowly: React.FC<springLikeAnimationProps> = ({ children, className, index }) => {
     return (
         <motion.div
             initial={{ opacity: 0, translateX: 10, translateY: 10 }}
@@ -69,12 +74,20 @@ export const VisiableSlowly: React.FC<Props> = ({ children, className, index = 1
     )
 }
 
-export const PopUpLikeSpring: React.FC<Props> = ({ children, className, index = 1 }) => {
+export const PopUpLikeSpring: React.FC<springLikeAnimationProps> = ({ children, className, index }) => {
+    const calculateDelay = (index: number) => {
+        let delay;
+        if (index <= 6) {
+            return delay = index * 0.2
+        } else {
+            return delay = index * 0.2 + 0.1
+        }
+    }
     return (
         <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.5, type: 'spring', delay: index * 0.3 }}
+            transition={{ duration: 1.2, type: 'spring', delay: calculateDelay(index + 1) }}
             viewport={{ once: true }}
             className={className}
         >

@@ -16,13 +16,15 @@ const Page = async () => {
   const projectData: any = await getProjects()
   const projects: projectProps[] = projectData?.documents
 
+  const filterBestProjects = projects.filter(project => project.best === true)
 
   return (
     <div className="relative z-0 w-full">
       <HomePage info={info} />
       {skills.length > 0 && <Skills skills={skills} />}
-      {(projects.length > 0 && projects.filter(project => project.best === true).length > 0) &&
-        <Projects projects={projects.reverse()} />}
+      {(projects.length > 0 && filterBestProjects.length > 0) &&
+        <Projects projects={filterBestProjects.reverse()} />
+      }
     </div>
   )
 }

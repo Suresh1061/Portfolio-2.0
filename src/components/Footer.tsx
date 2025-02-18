@@ -24,9 +24,9 @@ const Footer = ({ info }: FooterProps) => {
                         <path d="m6 8-4 4 4 4"></path>
                         <path d="m14.5 4-5 16"></path>
                     </svg>
-                    <p className=" text-xs sm:text-sm font-Lora tracking-wider ">Copyright ©{year}</p>
+                    <p className=" text-xs sm:text-sm font-Lora tracking-wider text-secondary">Copyright ©{year}</p>
                 </div>
-                <h1 className=" text-base sm:text-lg  font-Lora tracking-wider flex max-sm:order-1 max-sm:pt-2">Made with ❤️ by {info.name || "Suresh Pal"}</h1>
+                <h1 className="text-base sm:text-lg opacity-85 font-Lora tracking-wider flex max-sm:order-1 max-sm:pt-2">Made with ❤️ by {info.name || "Suresh Pal"}</h1>
                 <SocialMedia className="max-sm:hidden" info={info} />
             </div>
             <ScrollToTopBtn />

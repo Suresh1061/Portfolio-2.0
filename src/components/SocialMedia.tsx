@@ -7,7 +7,6 @@ import {
     FaXTwitter,
 } from "react-icons/fa6";
 import { motion } from "framer-motion";
-import { memo } from "react";
 
 type SocialMediaProps = {
     className?: string;
@@ -74,4 +73,4 @@ const SocialMedia: React.FC<SocialMediaProps> = ({ className, info }) => {
     )
 }
 
-export default memo(SocialMedia);
+export default SocialMedia

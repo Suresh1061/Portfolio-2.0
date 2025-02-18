@@ -13,16 +13,19 @@ type ProjectCardTypes = {
 
 const ProjectCard: React.FC<ProjectCardTypes> = ({ project, index }) => {
     const { title, imgSrc, description, tags, githubLink, demoLink } = project
+
     return (
-        <PopUpLikeSpring index={index} className=' max-w-sm  green-pink-gradient p-[2px] rounded-xl '>
+        <PopUpLikeSpring index={index} className=' max-w-sm  green-pink-gradient p-[3px] rounded-xl '>
             <div className=' w-full h-full bg-black-200 overflow-hidden rounded-xl p-4 space-y-2 flex flex-col justify-between'>
-                <Image
-                    src={String(fileService.getFilePreview(imgSrc as string) || imgSrc)}
-                    alt={title}
-                    width={1000}
-                    height={1000}
-                    className=' w-full h-[10rem] rounded-lg '
-                />
+                <div className='w-full h-44 overflow-hidden rounded-lg'>
+                    <Image
+                        src={String(fileService.getFilePreview(imgSrc as string) || imgSrc)}
+                        alt={title}
+                        width={384}
+                        height={176}
+                        className='w-full h-full object-cover hover:scale-110 hover:duration-500'
+                    />
+                </div>
                 <div className='space-y-2'>
                     <h2 className=' text-xl font-Merriweather tracking-wide'>{title}</h2>
                     <p className=' text-sm text-secondary font-Lora tracking-wider text-justify'>{description}</p>

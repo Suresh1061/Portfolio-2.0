@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useMemo, useState } from 'react'
+import React, { useState } from 'react'
 import Subheading from '../Subheading'
 import Image from 'next/image'
 import fileService from "@/appwrite/file"
@@ -16,9 +16,7 @@ const SkillsIcons: React.FC<SkillsIconsProps> = ({ heading, category, skills }) 
   const [hoveredCard, setHoveredCard] = useState<string | null>(null)
 
   // Filter skills by category once
-  const filteredSkills = useMemo(() => {
-    return skills.filter(item => item.category === category);
-  }, [skills, category]);
+  const filteredSkills = skills.filter(item => item.category === category)
 
   // If there are no matching skills, return null
   if (filteredSkills.length === 0) return null;
@@ -28,7 +26,7 @@ const SkillsIcons: React.FC<SkillsIconsProps> = ({ heading, category, skills }) 
       <Subheading heading={heading} className='mb-4 sm:mb-6' />
       <div className='flex flex-wrap gap-8'>
         {filteredSkills.map((item, i) => (
-          <VisiableSlowly index={i} key={i}>
+          <VisiableSlowly index={i} key={item.$id}>
             <div
               onMouseEnter={() => setHoveredCard(item.$id)}
               onMouseLeave={() => setHoveredCard(null)}
@@ -42,8 +40,8 @@ const SkillsIcons: React.FC<SkillsIconsProps> = ({ heading, category, skills }) 
                   </div>
                 </div>
               )}
-              <div className=' h-14 w-14 rounded-lg green-pink-gradient p-[1px]'>
-                <div className='h-full w-full bg-black-100 rounded-lg overflow-hidden p-2 flex justify-center items-center'>
+              <div className=' h-14 w-14 rounded-md green-pink-gradient flex justify-center items-center'>
+                <div className='h-[3.3rem] w-[3.3rem] bg-black-100 rounded-md overflow-hidden p-2 flex justify-center items-center'>
                   <Image
                     src={String(fileService.getFilePreview(item?.icon))}
                     alt={item.name}
